@@ -38,6 +38,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "22a983b7-90ce-42c8-b621-c2d707f06ffb",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Client",
@@ -185,6 +185,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -268,7 +269,6 @@
               ]
             },
             "id": "34fac3bc-cf37-4b91-ac7f-d9f7253ed135",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Frontend",
@@ -339,6 +339,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -422,7 +423,6 @@
               ]
             },
             "id": "af5821f2-83ff-467b-a847-8a9fae66a24b",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Login",
@@ -470,13 +470,6 @@
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -500,6 +493,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -583,7 +577,6 @@
               ]
             },
             "id": "be161643-5bd4-4c8c-a2df-7d99dd648535",
-            "zIndex": 4,
             "data": {
               "type": "tm.Process",
               "name": "Context Application",
@@ -659,6 +652,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -742,7 +736,6 @@
               ]
             },
             "id": "4f8d6ef9-c3bf-47e5-8859-47c1480416e4",
-            "zIndex": 5,
             "data": {
               "type": "tm.Store",
               "name": "Database: Users",
@@ -817,6 +810,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 6,
             "ports": {
               "groups": {
                 "top": {
@@ -900,7 +894,6 @@
               ]
             },
             "id": "bb89d81c-126c-4f2b-9669-57817c15cb9d",
-            "zIndex": 6,
             "data": {
               "type": "tm.Store",
               "name": "Amazon Cognito",
@@ -962,6 +955,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 7,
             "ports": {
               "groups": {
                 "top": {
@@ -1045,7 +1039,6 @@
               ]
             },
             "id": "b05240ad-b590-4daf-be9f-ca19830dcfc2",
-            "zIndex": 7,
             "data": {
               "type": "tm.Store",
               "name": "Amazon S3",
@@ -1115,7 +1108,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Cliente -> Frontend",
+              "name": "Cliente → Frontend",
               "description": "Requisição inicial de login, que deve ser protegida por HTTPS para evitar interceptação.",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -1146,7 +1139,7 @@
               }
             },
             "labels": [
-              "Cliente -> Frontend"
+              "Cliente → Frontend"
             ],
             "id": "cf21b8cf-f27d-4e9e-a84d-a66ea4605005",
             "source": {
@@ -1180,7 +1173,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Frontend -> Login",
+              "name": "Frontend → Login",
               "description": "Fluxo de dados em que o frontend envia a solicitação de autenticação para o processo de login no backend.",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -1211,7 +1204,7 @@
               }
             },
             "labels": [
-              "Frontend -> Login"
+              "Frontend → Login"
             ],
             "id": "5d8c93a2-6fab-4359-8042-31a9b6e73496",
             "source": {
