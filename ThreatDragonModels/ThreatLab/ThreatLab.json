@@ -300,7 +300,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "O frontend não criptografa adequadamente os dados enviados, deixando informações sensíveis (como a senha) vulneráveis à interceptação caso o sistema não use HTTPS.\n\nCAPEC-118 (Collect and Analyze Information)",
+                  "description": "O frontend não criptografa adequadamente os dados enviados, deixando informações sensíveis (como a senha) vulneráveis à interceptação caso o sistema não use HTTPS.\n\nCWE-256: Plaintext Storage of a Password\nCAPEC-157: Sniffing Attacks",
                   "mitigation": "Usar HTTPS para transmitir dados de forma segura e criptografada.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -312,10 +312,17 @@
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 3,
-                "informationDisclosure": 3,
+                "informationDisclosure": 4,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
