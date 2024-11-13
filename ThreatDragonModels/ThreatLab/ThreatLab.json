@@ -441,7 +441,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Repudiation",
-                  "description": "O sistema gera tokens JWT sem expiração, permitindo que um atacante reutilize um token comprometido indefinidamente para acessar o sistema.\n\nCAPEC-346 (Origin Validation Error)",
+                  "description": "O sistema gera tokens JWT sem expiração, permitindo que um atacante reutilize um token comprometido indefinidamente para acessar o sistema.\n\nCAPEC-212 (Exploitation of Authentication)",
                   "mitigation": "Configurar um tempo de expiração para os tokens JWT e implementar uma função de renovação de tokens para sessões estendidas.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -465,11 +465,18 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 2,
+                "repudiation": 3,
                 "informationDisclosure": 2,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -595,7 +602,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Repudiation",
-                  "description": "A Context Application aceita tokens JWT sem validação adequada, permitindo que tokens expirados ou comprometidos sejam usados para acessar funcionalidades protegidas.\n\nCAPEC-262 (Forced Browsing)",
+                  "description": "A Context Application aceita tokens JWT sem validação adequada, permitindo que tokens expirados ou comprometidos sejam usados para acessar funcionalidades protegidas.\n\nCAPEC-212 (Exploitation of Authentication)",
                   "mitigation": "Implementar validação de tokens em cada requisição, garantindo que o token não esteja expirado ou comprometido. Além disso, utilizar uma lista de tokens revogados para bloquear tokens suspeitos.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -619,7 +626,7 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 2,
+                "repudiation": 3,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 1
@@ -1323,7 +1330,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "A aplicação aceita tokens JWT expirados ou comprometidos, permitindo que tokens inválidos sejam reutilizados para obter acesso ao sistema de forma não autorizada.\n\nCAPEC-346 (Origin Validation Error)",
+                  "description": "A aplicação aceita tokens JWT expirados ou comprometidos, permitindo que tokens inválidos sejam reutilizados para obter acesso ao sistema de forma não autorizada.\n\nCAPEC-212 (Exploitation of Authentication)",
                   "mitigation": "Implementar validação de tokens em cada requisição para garantir que eles não estejam expirados ou comprometidos. Utilizar uma lista de tokens revogados para bloquear tokens suspeitos.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1332,7 +1339,7 @@
                 }
               ],
               "threatFrequency": {
-                "tampering": 2,
+                "tampering": 3,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
@@ -1485,7 +1492,7 @@
             },
             "vertices": [
               {
-                "x": 840,
+                "x": 830,
                 "y": 249
               }
             ]
