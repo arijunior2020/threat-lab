@@ -16,12 +16,1493 @@
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "version": "2.3.0",
-        "cells": [],
+        "cells": [
+          {
+            "position": {
+              "x": 50,
+              "y": 220
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Client"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "fe5bac99-8c92-4d46-bf91-9f3cd7d82ced"
+                },
+                {
+                  "group": "right",
+                  "id": "1f8a9dc6-0613-4212-8f37-4946c44b623b"
+                },
+                {
+                  "group": "bottom",
+                  "id": "076c28ec-e285-4fbb-ad8e-ce689cdcb30f"
+                },
+                {
+                  "group": "left",
+                  "id": "61dde182-93ee-4f55-ae1f-01459e899d65"
+                }
+              ]
+            },
+            "id": "22a983b7-90ce-42c8-b621-c2d707f06ffb",
+            "zIndex": 1,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Client",
+              "description": "Usuário final que interage com o sistema e inicia o processo de login. O Client é o ponto inicial de entrada para autenticação e outras interações com o sistema ThreatLab.\n",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "82f4bbef-8924-4f33-8725-73a8bb0f5c7f",
+                  "title": "Interceptação de Comunicação (Man-in-the-Middle)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "A comunicação entre o client e o front end está vulnerável a ataques de interceptação devido à falta de criptografia (HTTP). Um atacante pode interceptar e modificar dados sensíveis enviados pelo usuário.\n\nCAPEC-94 (Man-in-the-Middle Attack)",
+                  "mitigation": "Implementar HTTPS para garantir a confidencialidade e integridade dos dados transmitidos entre o client e o servidor, reduzindo o risco de interceptação.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": "8"
+                },
+                {
+                  "id": "3f9aacbc-e7f3-402e-b105-2809cf3fd151",
+                  "title": "Ataque de Phishing",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "O cliente pode ser induzido a inserir suas credenciais em um site falso (phishing) que imita o front end do sistema, expondo seus dados a um atacante.\n\nCAPEC-98 (Phishing)",
+                  "mitigation": "Sensibilizar o usuário para verificar a URL antes de inserir credenciais. Implementar autenticação multifator (MFA) para dificultar o uso de credenciais comprometidas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "9"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "repudiation": 0
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 406,
+              "y": 220
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Frontend"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "6a199732-43bb-4a41-a459-b8011816537c"
+                },
+                {
+                  "group": "right",
+                  "id": "99fe66f0-214c-4eca-8d7d-5cc9b98b4b67"
+                },
+                {
+                  "group": "bottom",
+                  "id": "0bee5a88-787e-40a9-b318-f387ff2c798a"
+                },
+                {
+                  "group": "left",
+                  "id": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
+                }
+              ]
+            },
+            "id": "34fac3bc-cf37-4b91-ac7f-d9f7253ed135",
+            "zIndex": 2,
+            "data": {
+              "type": "tm.Process",
+              "name": "Frontend",
+              "description": "Componente responsável por receber as credenciais de login do cliente e enviar a solicitação de autenticação para o backend. Este é o ponto intermediário entre o client e o processo de login.\n",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "6eeb2877-c8a2-4680-aee1-1a01696eeffb",
+                  "title": "Ataque de Força Bruta",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "Provide a description for this threatO sistema permite tentativas ilimitadas de login, tornando-o vulnerável a ataques de força bruta, onde um atacante pode tentar várias combinações de senha para acessar o sistema.\n\nCAPEC-112 (Brute Force)",
+                  "mitigation": "Implementar um limite de tentativas de login e bloqueio temporário da conta após várias tentativas falhas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "7"
+                },
+                {
+                  "id": "977db174-f45f-4648-b0f2-e05f18b82643",
+                  "title": "Exposição de Dados Sensíveis",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "O front end não criptografa adequadamente os dados enviados, deixando informações sensíveis (como a senha) vulneráveis à interceptação caso o sistema não use HTTPS.\n\nCAPEC-200 (Exposed Data in Transit)",
+                  "mitigation": "Usar HTTPS para transmitir dados de forma segura e criptografada.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "6"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 620,
+              "y": 220
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Login"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "6a199732-43bb-4a41-a459-b8011816537c"
+                },
+                {
+                  "group": "right",
+                  "id": "99fe66f0-214c-4eca-8d7d-5cc9b98b4b67"
+                },
+                {
+                  "group": "bottom",
+                  "id": "0bee5a88-787e-40a9-b318-f387ff2c798a"
+                },
+                {
+                  "group": "left",
+                  "id": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
+                }
+              ]
+            },
+            "id": "af5821f2-83ff-467b-a847-8a9fae66a24b",
+            "zIndex": 3,
+            "data": {
+              "type": "tm.Process",
+              "name": "Login",
+              "description": "Principal processo de autenticação do sistema. Recebe as credenciais do front end, realiza a verificação das credenciais e gera um token JWT para o usuário em caso de sucesso.\n",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "f3321bb6-a7ce-4505-9051-cec557ece764",
+                  "title": "Reutilização de Token JWT",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "O sistema gera tokens JWT sem expiração, permitindo que um atacante reutilize um token comprometido indefinidamente para acessar o sistema.\n\nCAPEC-346 (Origin Validation Error)",
+                  "mitigation": "Configurar um tempo de expiração para os tokens JWT e implementar uma função de renovação de tokens para sessões estendidas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "8"
+                },
+                {
+                  "id": "77f18fdd-b0af-4739-b2e9-25ea947f29ab",
+                  "title": "Exposição de Dados nos Logs",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "O processo de login registra dados sensíveis em logs não criptografados, expondo informações como nomes de usuários e atividades de login.\n\nCAPEC-532 (Information Exposure Through Log Files)",
+                  "mitigation": "Evitar logar informações sensíveis diretamente e usar criptografia nos logs que são enviados ao Amazon S3.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "6"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
+          },
+          {
+            "position": {
+              "x": 620,
+              "y": 371
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Context Application"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "6a199732-43bb-4a41-a459-b8011816537c"
+                },
+                {
+                  "group": "right",
+                  "id": "99fe66f0-214c-4eca-8d7d-5cc9b98b4b67"
+                },
+                {
+                  "group": "bottom",
+                  "id": "0bee5a88-787e-40a9-b318-f387ff2c798a"
+                },
+                {
+                  "group": "left",
+                  "id": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
+                }
+              ]
+            },
+            "id": "be161643-5bd4-4c8c-a2df-7d99dd648535",
+            "zIndex": 4,
+            "data": {
+              "type": "tm.Process",
+              "name": "Context Application",
+              "description": "Processo principal da aplicação que lida com as interações do usuário após o login. A Context Application processa solicitações autenticadas usando o token JWT e fornece acesso a funcionalidades protegidas.\n",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "3899b65c-2ad0-46db-87cc-414cce6579e9",
+                  "title": "Uso de Token JWT Expirado ou Comprometido",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "A Context Application aceita tokens JWT sem validação adequada, permitindo que tokens expirados ou comprometidos sejam usados para acessar funcionalidades protegidas.\n\nCAPEC-262 (Forced Browsing)",
+                  "mitigation": "Implementar validação de tokens em cada requisição, garantindo que o token não esteja expirado ou comprometido. Além disso, utilizar uma lista de tokens revogados para bloquear tokens suspeitos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "8"
+                },
+                {
+                  "id": "e225497e-0b4c-43a9-ba1b-ad726077203a",
+                  "title": "Escalada de Privilégios",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Um usuário com token JWT pode tentar acessar funcionalidades para as quais ele não tem permissão, explorando falhas de controle de acesso na Context Application.\n\nCAPEC-233 (Privilege Escalation)",
+                  "mitigation": "Implementar verificação rigorosa de permissões em cada endpoint, garantindo que o usuário tenha o nível de acesso adequado para as funcionalidades que está tentando utilizar.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": "9"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 866,
+              "y": 60
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Database: Users"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "3cc6b801-ba5e-4dc0-9951-84c7a32ef468"
+                },
+                {
+                  "group": "right",
+                  "id": "cbedd031-7f35-4f0d-b547-30ba9de34a41"
+                },
+                {
+                  "group": "bottom",
+                  "id": "5a8456a4-bea4-4cae-b00b-7a149e121edc"
+                },
+                {
+                  "group": "left",
+                  "id": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
+                }
+              ]
+            },
+            "id": "4f8d6ef9-c3bf-47e5-8859-47c1480416e4",
+            "zIndex": 5,
+            "data": {
+              "type": "tm.Store",
+              "name": "Database: Users",
+              "description": "Armazenamento dos dados de usuários, incluindo informações de autenticação, como nome de usuário e senha. Utilizado pelo processo de login para verificar as credenciais.\n",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "id": "c2f6e72d-1c51-4922-858c-b412e098f58b",
+                  "title": "Injeção de SQL",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "O banco de dados está vulnerável a injeções de SQL, o que pode permitir que um atacante obtenha ou modifique dados de usuários de forma não autorizada.\n\nCAPEC-66 (SQL Injection)",
+                  "mitigation": "Utilizar consultas parametrizadas e um ORM para prevenir injeções de SQL.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": "9"
+                },
+                {
+                  "id": "cbe95277-facf-41f2-9a6a-9b3a4730521f",
+                  "title": "Exposição de Dados Sensíveis",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Dados sensíveis como senhas podem ser expostos devido à falta de criptografia ou armazenamento seguro.\n\nCAPEC-222 (Sensitive Data Exposure)",
+                  "mitigation": "Criptografar senhas e informações sensíveis usando algoritmos seguros como bcrypt.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 866,
+              "y": 220
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Amazon Cognito"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "3cc6b801-ba5e-4dc0-9951-84c7a32ef468"
+                },
+                {
+                  "group": "right",
+                  "id": "cbedd031-7f35-4f0d-b547-30ba9de34a41"
+                },
+                {
+                  "group": "bottom",
+                  "id": "5a8456a4-bea4-4cae-b00b-7a149e121edc"
+                },
+                {
+                  "group": "left",
+                  "id": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
+                }
+              ]
+            },
+            "id": "bb89d81c-126c-4f2b-9669-57817c15cb9d",
+            "zIndex": 6,
+            "data": {
+              "type": "tm.Store",
+              "name": "Amazon Cognito",
+              "description": "Serviço de autenticação da AWS utilizado para gerenciar credenciais de usuários e tokens de sessão. Verifica a validade das credenciais enviadas pelo processo de login.\n",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "id": "97fc3863-3b29-448c-bbcc-3c8819f31ea1",
+                  "title": "Gerenciamento Inadequado de Sessão",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "Tokens de sessão persistem por períodos longos, o que pode permitir que um atacante use um token comprometido para acessar o sistema.\n\nCAPEC-384 (Session Fixation)",
+                  "mitigation": "Configurar expiração curta para tokens e implementar renovação de sessão de forma segura.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 866,
+              "y": 371
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Amazon S3"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "3cc6b801-ba5e-4dc0-9951-84c7a32ef468"
+                },
+                {
+                  "group": "right",
+                  "id": "cbedd031-7f35-4f0d-b547-30ba9de34a41"
+                },
+                {
+                  "group": "bottom",
+                  "id": "5a8456a4-bea4-4cae-b00b-7a149e121edc"
+                },
+                {
+                  "group": "left",
+                  "id": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
+                }
+              ]
+            },
+            "id": "b05240ad-b590-4daf-be9f-ca19830dcfc2",
+            "zIndex": 7,
+            "data": {
+              "type": "tm.Store",
+              "name": "Amazon S3",
+              "description": "Armazenamento de logs do sistema, incluindo registros de tentativas de login e atividades de autenticação. Utilizado para auditoria e monitoramento de segurança.\n",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "id": "2d1c0e22-7683-4a50-b30a-9fc474c30301",
+                  "title": "Exposição de Dados nos Logs",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Os logs armazenados no S3 podem conter dados sensíveis sem criptografia, expondo informações como tentativas de login e atividades de usuário.\n\nCAPEC-532 (Information Exposure Through Log Files)",
+                  "mitigation": "Criptografar logs antes de armazená-los no S3 e revisar políticas de acesso ao bucket.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": "6"
+                },
+                {
+                  "id": "4cbba797-abd3-4471-8c5d-bdb29655eba2",
+                  "title": "Acesso Não Autorizado ao Bucket de Logs",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Configurações incorretas de permissões podem permitir que usuários não autorizados acessem o bucket de logs, expondo dados sensíveis.\n\nCAPEC-225 (File Permissions Modification)",
+                  "mitigation": "Configurar permissões restritivas no bucket do S3, permitindo acesso apenas a usuários autorizados e auditando regularmente.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 2,
+                "denialOfService": 0
+              }
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Cliente -> Frontend",
+              "description": "Requisição inicial de login, que deve ser protegida por HTTPS para evitar interceptação.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "7437801c-12c3-411e-be21-2055b3e1a3b0",
+                  "title": "Interceptação de Comunicação (Man-in-the-Middle)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "A falta de criptografia no tráfego entre o cliente e o frontend permite que um atacante intercepte dados sensíveis, como credenciais de login.\n\nCAPEC-94 (Man-in-the-Middle Attack)",
+                  "mitigation": "Implementar HTTPS para garantir a confidencialidade e integridade dos dados transmitidos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Cliente -> Frontend"
+            ],
+            "id": "cf21b8cf-f27d-4e9e-a84d-a66ea4605005",
+            "source": {
+              "x": 180,
+              "y": 250
+            },
+            "target": {
+              "cell": "34fac3bc-cf37-4b91-ac7f-d9f7253ed135",
+              "port": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Frontend -> Login",
+              "description": "Fluxo de dados em que o frontend envia a solicitação de autenticação para o processo de login no backend.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "1c0b9bd6-16c4-44e2-afa9-732525e3a7a0",
+                  "title": "Ataque de Força Bruta",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A ausência de um limite para tentativas de login permite que um atacante tente múltiplas combinações de senha até encontrar a correta.\n\nCAPEC-112 (Brute Force)",
+                  "mitigation": "Implementar um limite de tentativas de login e bloquear a conta temporariamente após várias tentativas falhas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1
+              }
+            },
+            "labels": [
+              "Frontend -> Login"
+            ],
+            "id": "5d8c93a2-6fab-4359-8042-31a9b6e73496",
+            "source": {
+              "x": 466,
+              "y": 249
+            },
+            "target": {
+              "cell": "af5821f2-83ff-467b-a847-8a9fae66a24b",
+              "port": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 249
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Login → Database: Users",
+              "description": "Consulta ao banco de dados para verificar se o usuário existe e validar as credenciais fornecidas.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "3f2ad008-3002-4eab-a3af-6ae618280c60",
+                  "title": "Injeção de SQL",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "O banco de dados é vulnerável a injeções de SQL, permitindo que um atacante manipule as consultas para extrair ou modificar dados de usuários.\n\nCAPEC-66 (SQL Injection)",
+                  "mitigation": "Utilizar consultas parametrizadas e um ORM (Object-Relational Mapping) para prevenir injeções de SQL.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": "9"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Login → Database: Users"
+            ],
+            "id": "418e0e62-97ab-4bc3-90cc-87755eef5f8e",
+            "source": {
+              "x": 680,
+              "y": 245
+            },
+            "target": {
+              "cell": "4f8d6ef9-c3bf-47e5-8859-47c1480416e4",
+              "port": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
+            },
+            "vertices": [
+              {
+                "x": 780,
+                "y": 140
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Login → Amazon Cognito",
+              "description": "Verificação de autenticação do usuário e gerenciamento de tokens JWT via Amazon Cognito.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "b3379f68-7854-478b-ab19-de7f9346f5b3",
+                  "title": "Gerenciamento Inadequado de Sessão",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": " Sessões persistentes por períodos longos podem permitir que um atacante utilize um token comprometido para acessar o sistema.\n\nCAPEC-384 (Session Fixation)",
+                  "mitigation": "Configurar uma expiração curta para tokens e implementar renovação de sessão segura.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Login → Amazon Cognito"
+            ],
+            "id": "5443fc86-ee7b-4165-b2df-878c8a818a68",
+            "source": {
+              "x": 680,
+              "y": 249
+            },
+            "target": {
+              "cell": "bb89d81c-126c-4f2b-9669-57817c15cb9d",
+              "port": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
+            },
+            "vertices": [
+              {
+                "x": 790,
+                "y": 249
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Login → Amazon S3",
+              "description": "Envio de logs de autenticação para o armazenamento no Amazon S3.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "693c4f8c-f87e-4e32-a492-69ea401e2e81",
+                  "title": "Exposição de Dados Sensíveis nos Logs",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Logs armazenados no S3 podem conter dados sensíveis sem criptografia, expondo informações como tentativas de login e atividades de usuário.\n\nCAPEC-532 (Information Exposure Through Log Files)",
+                  "mitigation": "Criptografar logs antes de armazená-los no S3 e revisar as políticas de acesso ao bucket.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 20,
+                  "score": "6"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Login → Amazon S3"
+            ],
+            "id": "d6c961ea-5680-4ea0-a44e-641eb421abbb",
+            "source": {
+              "x": 655,
+              "y": 280
+            },
+            "target": {
+              "cell": "b05240ad-b590-4daf-be9f-ca19830dcfc2",
+              "port": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Frontend → Context Application",
+              "description": "Envio do token JWT do frontend para o contexto da aplicação principal para acesso a funcionalidades protegidas.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "f91860ac-cc6e-473c-b959-4956c64a8c1b",
+                  "title": "Uso de Token Expirado ou Reutilização de Token",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A aplicação aceita tokens JWT expirados ou comprometidos, permitindo que tokens inválidos sejam reutilizados para obter acesso ao sistema de forma não autorizada.\n\nCAPEC-346 (Origin Validation Error)",
+                  "mitigation": "Implementar validação de tokens em cada requisição para garantir que eles não estejam expirados ou comprometidos. Utilizar uma lista de tokens revogados para bloquear tokens suspeitos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 21,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Frontend → Context Application"
+            ],
+            "id": "4816e56e-ef22-4622-8699-903f6360577a",
+            "source": {
+              "x": 433,
+              "y": 280
+            },
+            "target": {
+              "cell": "be161643-5bd4-4c8c-a2df-7d99dd648535",
+              "port": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
+            }
+          }
+        ],
         "description": "Este diagrama representa o fluxo de autenticação e as interações principais entre o frontend, backend, banco de dados e serviços AWS (Cognito e S3) no sistema ThreatLab. O diagrama é utilizado para identificar vulnerabilidades no processo de login e armazenamento de logs, permitindo a modelagem de ameaças usando o framework STRIDE."
       }
     ],
     "diagramTop": 1,
     "reviewer": "Não Aplicável",
-    "threatTop": 0
+    "threatTop": 21
   }
 }
