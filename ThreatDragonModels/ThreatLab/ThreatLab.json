@@ -1,0 +1,27 @@
+{
+  "version": "2.3.0",
+  "summary": {
+    "title": "ThreatLab",
+    "owner": "Arimatéia Júnior",
+    "description": "O projeto ThreatLab é uma aplicação web vulnerável projetada para estudos e modelagem de ameaças. Ele simula um sistema de login que utiliza um frontend simples, um backend em Node.js com autenticação JWT e integração com serviços AWS, incluindo Amazon Cognito para autenticação e Amazon S3 para armazenamento de logs.\nO sistema foi intencionalmente configurado com vulnerabilidades para análise e aprendizado, incluindo falta de criptografia em certas áreas, sessões sem expiração e logs de dados sensíveis.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "ThreatLab Login and Data Flow",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.3.0",
+        "cells": [],
+        "description": "Este diagrama representa o fluxo de autenticação e as interações principais entre o frontend, backend, banco de dados e serviços AWS (Cognito e S3) no sistema ThreatLab. O diagrama é utilizado para identificar vulnerabilidades no processo de login e armazenamento de logs, permitindo a modelagem de ameaças usando o framework STRIDE."
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Não Aplicável",
+    "threatTop": 0
+  }
+}
