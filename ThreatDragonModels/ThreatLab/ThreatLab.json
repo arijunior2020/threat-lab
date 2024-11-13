@@ -454,7 +454,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "O processo de login registra dados sensíveis em logs não criptografados, expondo informações como nomes de usuários e atividades de login.\n\nCAPEC-532 (Information Exposure Through Log Files)",
+                  "description": "O processo de login registra dados sensíveis em logs não criptografados, expondo informações como nomes de usuários e atividades de login.\n\nCAPEC-118 (Data Interception)",
                   "mitigation": "Evitar logar informações sensíveis diretamente e usar criptografia nos logs que são enviados ao Amazon S3.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -466,17 +466,10 @@
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 3,
-                "informationDisclosure": 2,
+                "informationDisclosure": 3,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1065,7 +1058,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Os logs armazenados no S3 podem conter dados sensíveis sem criptografia, expondo informações como tentativas de login e atividades de usuário.\n\nCAPEC-532 (Information Exposure Through Log Files)",
+                  "description": "Os logs armazenados no S3 podem conter dados sensíveis sem criptografia, expondo informações como tentativas de login e atividades de usuário.\n\nCAPEC-118 (Data Interception)",
                   "mitigation": "Criptografar logs antes de armazená-los no S3 e revisar políticas de acesso ao bucket.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1089,9 +1082,16 @@
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 2,
+                "informationDisclosure": 3,
                 "denialOfService": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
