@@ -137,7 +137,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Spoofing",
-                  "description": "A comunicação entre o client e o front end está vulnerável a ataques de interceptação devido à falta de criptografia (HTTP). Um atacante pode interceptar e modificar dados sensíveis enviados pelo usuário.\n\nCAPEC-94 (Man-in-the-Middle Attack)",
+                  "description": "A comunicação entre o client e o frontend está vulnerável a ataques de interceptação devido à falta de criptografia (HTTP). Um atacante pode interceptar e modificar dados sensíveis enviados pelo usuário.\n\nCAPEC-94 (Man-in-the-Middle Attack)",
                   "mitigation": "Implementar HTTPS para garantir a confidencialidade e integridade dos dados transmitidos entre o client e o servidor, reduzindo o risco de interceptação.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -159,7 +159,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 2,
+                "spoofing": 3,
                 "repudiation": 0
               }
             }
@@ -287,7 +287,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Repudiation",
-                  "description": "Provide a description for this threatO sistema permite tentativas ilimitadas de login, tornando-o vulnerável a ataques de força bruta, onde um atacante pode tentar várias combinações de senha para acessar o sistema.\n\nCAPEC-112 (Brute Force)",
+                  "description": "O sistema permite tentativas ilimitadas de login, tornando-o vulnerável a ataques de força bruta, onde um atacante pode tentar várias combinações de senha para acessar o sistema.\n\nCAPEC-112 (Brute Force)",
                   "mitigation": "Implementar um limite de tentativas de login e bloqueio temporário da conta após várias tentativas falhas.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -300,7 +300,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "O front end não criptografa adequadamente os dados enviados, deixando informações sensíveis (como a senha) vulneráveis à interceptação caso o sistema não use HTTPS.\n\nCAPEC-200 (Exposed Data in Transit)",
+                  "description": "O frontend não criptografa adequadamente os dados enviados, deixando informações sensíveis (como a senha) vulneráveis à interceptação caso o sistema não use HTTPS.\n\nCAPEC-200 (Exposed Data in Transit)",
                   "mitigation": "Usar HTTPS para transmitir dados de forma segura e criptografada.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -311,8 +311,8 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 1,
-                "informationDisclosure": 1,
+                "repudiation": 2,
+                "informationDisclosure": 2,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
@@ -465,8 +465,8 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 1,
-                "informationDisclosure": 1,
+                "repudiation": 2,
+                "informationDisclosure": 2,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
@@ -619,7 +619,7 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 1,
+                "repudiation": 2,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 1
@@ -1134,7 +1134,7 @@
               ],
               "threatFrequency": {
                 "tampering": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 0
               }
             },
@@ -1151,76 +1151,6 @@
               "port": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
             },
             "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Frontend → Login",
-              "description": "Fluxo de dados em que o frontend envia a solicitação de autenticação para o processo de login no backend.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "1c0b9bd6-16c4-44e2-afa9-732525e3a7a0",
-                  "title": "Ataque de Força Bruta",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Denial of service",
-                  "description": "A ausência de um limite para tentativas de login permite que um atacante tente múltiplas combinações de senha até encontrar a correta.\n\nCAPEC-112 (Brute Force)",
-                  "mitigation": "Implementar um limite de tentativas de login e bloquear a conta temporariamente após várias tentativas falhas.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 17,
-                  "score": ""
-                }
-              ],
-              "threatFrequency": {
-                "tampering": 0,
-                "informationDisclosure": 0,
-                "denialOfService": 1
-              }
-            },
-            "labels": [
-              "Frontend → Login"
-            ],
-            "id": "5d8c93a2-6fab-4359-8042-31a9b6e73496",
-            "source": {
-              "x": 466,
-              "y": 249
-            },
-            "target": {
-              "cell": "af5821f2-83ff-467b-a847-8a9fae66a24b",
-              "port": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
-            },
-            "vertices": [
-              {
-                "x": 560,
-                "y": 249
-              }
-            ]
           },
           {
             "shape": "flow",
@@ -1357,7 +1287,7 @@
             },
             "vertices": [
               {
-                "x": 790,
+                "x": 840,
                 "y": 249
               }
             ]
@@ -1424,6 +1354,16 @@
             "target": {
               "cell": "b05240ad-b590-4daf-be9f-ca19830dcfc2",
               "port": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
             }
           },
           {
@@ -1472,7 +1412,7 @@
                 }
               ],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 2,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
@@ -1489,6 +1429,76 @@
               "cell": "be161643-5bd4-4c8c-a2df-7d99dd648535",
               "port": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Frontend → Login",
+              "description": "Fluxo de dados em que o frontend envia a solicitação de autenticação para o processo de login no backend.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "1c0b9bd6-16c4-44e2-afa9-732525e3a7a0",
+                  "title": "Ataque de Força Bruta",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A ausência de um limite para tentativas de login permite que um atacante tente múltiplas combinações de senha até encontrar a correta.\n\nCAPEC-112 (Brute Force)",
+                  "mitigation": "Implementar um limite de tentativas de login e bloquear a conta temporariamente após várias tentativas falhas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 3
+              }
+            },
+            "labels": [
+              "Frontend → Login"
+            ],
+            "id": "5d8c93a2-6fab-4359-8042-31a9b6e73496",
+            "source": {
+              "x": 466,
+              "y": 249
+            },
+            "target": {
+              "cell": "af5821f2-83ff-467b-a847-8a9fae66a24b",
+              "port": "da8c8be3-43ff-4dd1-a08b-b21da742a7e2"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 249
+              }
+            ]
           }
         ],
         "description": "Este diagrama representa o fluxo de autenticação e as interações principais entre o frontend, backend, banco de dados e serviços AWS (Cognito e S3) no sistema ThreatLab. O diagrama é utilizado para identificar vulnerabilidades no processo de login e armazenamento de logs, permitindo a modelagem de ameaças usando o framework STRIDE."
