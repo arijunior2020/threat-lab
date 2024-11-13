@@ -2,7 +2,7 @@
   "version": "2.3.0",
   "summary": {
     "title": "ThreatLab",
-    "owner": "Arimatéia Júnior",
+    "owner": "JOSE ARIMATEIA RODRIGUES JUNIOR - MATRÍCULA: 2417061",
     "description": "O projeto ThreatLab é uma aplicação web vulnerável projetada para estudos e modelagem de ameaças. Ele simula um sistema de login que utiliza um frontend simples, um backend em Node.js com autenticação JWT e integração com serviços AWS, incluindo Amazon Cognito para autenticação e Amazon S3 para armazenamento de logs.\nO sistema foi intencionalmente configurado com vulnerabilidades para análise e aprendizado, incluindo falta de criptografia em certas áreas, sessões sem expiração e logs de dados sensíveis.",
     "id": 0
   },
