@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "threat",
+    "password": "threat",
+    "database": "threat-db",
+    "host": "db",
+    "dialect": "postgres"
+  }
+}

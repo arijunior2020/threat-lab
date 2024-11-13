@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: threat
+      POSTGRES_PASSWORD: threat123
+      POSTGRES_DB: threat-db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      JWT_SECRET: 9ad9844db072db1005d124f5090a185cec41459dfff3dafcd9d2718bc1f75efbaf28b2a192b8def87edf749264b01916088b23cb3efd60e3ab57fa4253cd22c2ad2459b4f60cfaac65c9490435eb204993b23b9b2f05d0cfc5552237538cd69f0b258697e21d6c9a45bcfe314585bcc6acd96a3a785419082bcfe941511512ed
+      AWS_ACCESS_KEY_ID: AKIARIJR2024
+      AWS_SECRET_ACCESS_KEY: JR9856TY$$%%%
+      AWS_REGION: us-east-1
+      S3_BUCKET_NAME: threatlab-logs-bucket
+      COGNITO_USER_POOL_ID: us-east-1_PoolId
+      COGNITO_CLIENT_ID: threatId123456
+      DB_HOST: threatlab-db
+      DB_USER: threat
+      DB_PASSWORD: threat123
+      DB_NAME: threatlab-db
+      DB_PORT: 5432
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
