@@ -786,7 +786,7 @@
           },
           {
             "position": {
-              "x": 866,
+              "x": 916,
               "y": 220
             },
             "size": {
@@ -1243,76 +1243,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Login → Amazon Cognito",
-              "description": "Verificação de autenticação do usuário e gerenciamento de tokens JWT via Amazon Cognito.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "b3379f68-7854-478b-ab19-de7f9346f5b3",
-                  "title": "Gerenciamento Inadequado de Sessão",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": " Sessões persistentes por períodos longos podem permitir que um atacante utilize um token comprometido para acessar o sistema.\n\nCAPEC-384 (Session Fixation)",
-                  "mitigation": "Configurar uma expiração curta para tokens e implementar renovação de sessão segura.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 19,
-                  "score": "8"
-                }
-              ],
-              "threatFrequency": {
-                "tampering": 1,
-                "informationDisclosure": 0,
-                "denialOfService": 0
-              }
-            },
-            "labels": [
-              "Login → Amazon Cognito"
-            ],
-            "id": "5443fc86-ee7b-4165-b2df-878c8a818a68",
-            "source": {
-              "x": 680,
-              "y": 249
-            },
-            "target": {
-              "cell": "bb89d81c-126c-4f2b-9669-57817c15cb9d",
-              "port": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
-            },
-            "vertices": [
-              {
-                "x": 840,
-                "y": 249
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Login → Amazon S3",
               "description": "Envio de logs de autenticação para o armazenamento no Amazon S3.",
               "outOfScope": false,
@@ -1354,16 +1284,6 @@
             "target": {
               "cell": "b05240ad-b590-4daf-be9f-ca19830dcfc2",
               "port": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
             }
           },
           {
@@ -1496,6 +1416,76 @@
             "vertices": [
               {
                 "x": 560,
+                "y": 249
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Login → Amazon Cognito",
+              "description": "Verificação de autenticação do usuário e gerenciamento de tokens JWT via Amazon Cognito.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "b3379f68-7854-478b-ab19-de7f9346f5b3",
+                  "title": "Gerenciamento Inadequado de Sessão",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": " Sessões persistentes por períodos longos podem permitir que um atacante utilize um token comprometido para acessar o sistema.\n\nCAPEC-384 (Session Fixation)",
+                  "mitigation": "Configurar uma expiração curta para tokens e implementar renovação de sessão segura.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Login → Amazon Cognito"
+            ],
+            "id": "5443fc86-ee7b-4165-b2df-878c8a818a68",
+            "source": {
+              "x": 680,
+              "y": 249
+            },
+            "target": {
+              "cell": "bb89d81c-126c-4f2b-9669-57817c15cb9d",
+              "port": "77d1ee15-fc67-4f38-ae15-47a90a06c332"
+            },
+            "vertices": [
+              {
+                "x": 840,
                 "y": 249
               }
             ]
