@@ -137,7 +137,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Spoofing",
-                  "description": "A comunicação entre o client e o frontend está vulnerável a ataques de interceptação devido à falta de criptografia (HTTP). Um atacante pode interceptar e modificar dados sensíveis enviados pelo usuário.\n\nCAPEC-94 (Man-in-the-Middle Attack)",
+                  "description": "A comunicação entre o client e o frontend está vulnerável a ataques de interceptação devido à falta de criptografia (HTTP). Um atacante pode interceptar e modificar dados sensíveis enviados pelo usuário.\n\nCWE-319: Cleartext Transmission of Sensitive Information\nCAPEC-117: Interception",
                   "mitigation": "Implementar HTTPS para garantir a confidencialidade e integridade dos dados transmitidos entre o client e o servidor, reduzindo o risco de interceptação.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -150,7 +150,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Spoofing",
-                  "description": "O cliente pode ser induzido a inserir suas credenciais em um site falso (phishing) que imita o front end do sistema, expondo seus dados a um atacante.\n\nCAPEC-98 (Phishing)",
+                  "description": "O cliente pode ser induzido a inserir suas credenciais em um site falso (phishing) que imita o front end do sistema, expondo seus dados a um atacante.\n\nCWE-451: User Interface (UI) Misrepresentation of Critical Information\nCAPEC-98: Phishing",
                   "mitigation": "Sensibilizar o usuário para verificar a URL antes de inserir credenciais. Implementar autenticação multifator (MFA) para dificultar o uso de credenciais comprometidas.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -159,7 +159,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 3,
+                "spoofing": 6,
                 "repudiation": 0
               }
             }
@@ -287,7 +287,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Repudiation",
-                  "description": "O sistema permite tentativas ilimitadas de login, tornando-o vulnerável a ataques de força bruta, onde um atacante pode tentar várias combinações de senha para acessar o sistema.\n\nCAPEC-112 (Brute Force)",
+                  "description": "O sistema permite tentativas ilimitadas de login, tornando-o vulnerável a ataques de força bruta, onde um atacante pode tentar várias combinações de senha para acessar o sistema.\n\nCWE-521: Weak Password Requirements\nCAPEC-112: Brute Force",
                   "mitigation": "Implementar um limite de tentativas de login e bloqueio temporário da conta após várias tentativas falhas.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -300,7 +300,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "O frontend não criptografa adequadamente os dados enviados, deixando informações sensíveis (como a senha) vulneráveis à interceptação caso o sistema não use HTTPS.\n\nCAPEC-200 (Exposed Data in Transit)",
+                  "description": "O frontend não criptografa adequadamente os dados enviados, deixando informações sensíveis (como a senha) vulneráveis à interceptação caso o sistema não use HTTPS.\n\nCAPEC-118 (Collect and Analyze Information)",
                   "mitigation": "Usar HTTPS para transmitir dados de forma segura e criptografada.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -311,8 +311,8 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 2,
-                "informationDisclosure": 2,
+                "repudiation": 3,
+                "informationDisclosure": 3,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
@@ -441,7 +441,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Repudiation",
-                  "description": "O sistema gera tokens JWT sem expiração, permitindo que um atacante reutilize um token comprometido indefinidamente para acessar o sistema.\n\nCAPEC-212 (Exploitation of Authentication)",
+                  "description": "O sistema gera tokens JWT sem expiração, permitindo que um atacante reutilize um token comprometido indefinidamente para acessar o sistema.\n\nCWE-384: Session Fixation\nCAPEC-60: Reusing Session IDs (aka Session Replay)",
                   "mitigation": "Configurar um tempo de expiração para os tokens JWT e implementar uma função de renovação de tokens para sessões estendidas.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -454,7 +454,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "O processo de login registra dados sensíveis em logs não criptografados, expondo informações como nomes de usuários e atividades de login.\n\nCAPEC-118 (Data Interception)",
+                  "description": "O processo de login registra dados sensíveis em logs não criptografados, expondo informações como nomes de usuários e atividades de login.\n\nCWE-532: Insertion of Sensitive Information into Log File\nCAPEC-215: Fuzzing for application mapping",
                   "mitigation": "Evitar logar informações sensíveis diretamente e usar criptografia nos logs que são enviados ao Amazon S3.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -465,8 +465,8 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 3,
-                "informationDisclosure": 3,
+                "repudiation": 5,
+                "informationDisclosure": 5,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
@@ -595,7 +595,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Repudiation",
-                  "description": "A Context Application aceita tokens JWT sem validação adequada, permitindo que tokens expirados ou comprometidos sejam usados para acessar funcionalidades protegidas.\n\nCAPEC-212 (Exploitation of Authentication)",
+                  "description": "A Context Application aceita tokens JWT sem validação adequada, permitindo que tokens expirados ou comprometidos sejam usados para acessar funcionalidades protegidas.\n\nCWE-384: Session Fixation\nCAPEC-60: Reusing Session IDs (aka Session Replay)\n",
                   "mitigation": "Implementar validação de tokens em cada requisição, garantindo que o token não esteja expirado ou comprometido. Além disso, utilizar uma lista de tokens revogados para bloquear tokens suspeitos.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -608,7 +608,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Elevation of privilege",
-                  "description": "Um usuário com token JWT pode tentar acessar funcionalidades para as quais ele não tem permissão, explorando falhas de controle de acesso na Context Application.\n\nCAPEC-233 (Privilege Escalation)",
+                  "description": "Um usuário com token JWT pode tentar acessar funcionalidades para as quais ele não tem permissão, explorando falhas de controle de acesso na Context Application.\n\nCWE-269: Improper Privilege Management\nCAPEC-233: Privilege Escalation",
                   "mitigation": "Implementar verificação rigorosa de permissões em cada endpoint, garantindo que o usuário tenha o nível de acesso adequado para as funcionalidades que está tentando utilizar.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -619,10 +619,10 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 3,
+                "repudiation": 5,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 1
+                "elevationOfPrivilege": 2
               }
             }
           },
@@ -755,7 +755,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Tampering",
-                  "description": "O banco de dados está vulnerável a injeções de SQL, o que pode permitir que um atacante obtenha ou modifique dados de usuários de forma não autorizada.\n\nCAPEC-66 (SQL Injection)",
+                  "description": "O banco de dados está vulnerável a injeções de SQL, o que pode permitir que um atacante obtenha ou modifique dados de usuários de forma não autorizada.\n\nCWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')\nCAPEC-66: SQL Injection",
                   "mitigation": "Utilizar consultas parametrizadas e um ORM para prevenir injeções de SQL.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -768,7 +768,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "Dados sensíveis como senhas podem ser expostos devido à falta de criptografia ou armazenamento seguro.\n\nCAPEC-222 (Sensitive Data Exposure)",
+                  "description": "Dados sensíveis como senhas podem ser expostos devido à falta de criptografia ou armazenamento seguro.\n\nCWE-256: Plaintext Storage of a Password\nCAPEC-157: Sniffing Attacks",
                   "mitigation": "Criptografar senhas e informações sensíveis usando algoritmos seguros como bcrypt.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -777,9 +777,9 @@
                 }
               ],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 2,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 3,
                 "denialOfService": 0
               }
             }
@@ -913,7 +913,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Repudiation",
-                  "description": "Tokens de sessão persistem por períodos longos, o que pode permitir que um atacante use um token comprometido para acessar o sistema.\n\nCAPEC-384 (Session Fixation)",
+                  "description": "Tokens de sessão persistem por períodos longos, o que pode permitir que um atacante use um token comprometido para acessar o sistema.\n\nCWE-613: Insufficient Session Expiration\nCAPEC-60: Reusing Session IDs",
                   "mitigation": "Configurar expiração curta para tokens e implementar renovação de sessão de forma segura.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -923,7 +923,7 @@
               ],
               "threatFrequency": {
                 "tampering": 0,
-                "repudiation": 1,
+                "repudiation": 3,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
@@ -1058,7 +1058,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Os logs armazenados no S3 podem conter dados sensíveis sem criptografia, expondo informações como tentativas de login e atividades de usuário.\n\nCAPEC-118 (Data Interception)",
+                  "description": "Os logs armazenados no S3 podem conter dados sensíveis sem criptografia, expondo informações como tentativas de login e atividades de usuário.\n\nCWE-256: Plaintext Storage of a Password\nCAPEC-157: Sniffing Attacks",
                   "mitigation": "Criptografar logs antes de armazená-los no S3 e revisar políticas de acesso ao bucket.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1071,7 +1071,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "Configurações incorretas de permissões podem permitir que usuários não autorizados acessem o bucket de logs, expondo dados sensíveis.\n\nCAPEC-225 (File Permissions Modification)",
+                  "description": "Configurações incorretas de permissões podem permitir que usuários não autorizados acessem o bucket de logs, expondo dados sensíveis.\n\nCWE-732: Incorrect Permission Assignment for Critical Resource\nCAPEC-180: Exploiting Incorrectly Configured Access Control Security Levels.\nCAPEC-122: Privilege Abuse",
                   "mitigation": "Configurar permissões restritivas no bucket do S3, permitindo acesso apenas a usuários autorizados e auditando regularmente.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1082,7 +1082,7 @@
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 3,
+                "informationDisclosure": 6,
                 "denialOfService": 0
               }
             },
@@ -1276,7 +1276,7 @@
               ],
               "threatFrequency": {
                 "tampering": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 0
               }
             },
